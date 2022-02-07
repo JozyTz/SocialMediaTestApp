@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
 
-/**
- * Controller used to showcase Create and Read from a LIST
- *
- * @author Vivek Bengre
- */
 
 @RestController
 public class PeopleController {
