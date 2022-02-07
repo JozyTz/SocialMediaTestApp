@@ -27,7 +27,7 @@ public class TestController {
     public @ResponseBody String createPerson(@RequestBody Tests song) {
         System.out.println(song);
         songList.put(song.getTitle(), song);
-        return "New person "+ song.getTitle() + " Saved";
+        return "New song "+ song.getTitle() + " Saved";
     }
 	
 	@GetMapping("/song/{title}")
