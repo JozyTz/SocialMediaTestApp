@@ -12,6 +12,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     Button login;
     TextView tv;
+    TextView success;
     int counter = 5;
 
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         login = (Button)findViewById(R.id.button2);
         tv = findViewById(R.id.pCounter);
+        success = findViewById(R.id.textView2);
         tv.setText("" + counter);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -42,10 +44,12 @@ public class MainActivity extends AppCompatActivity {
         {
             counter = 5;
             tv.setText("" + counter);
+            success.setText("Username and password are correct!");
         }else
         {
             counter--;
             tv.setText("" + counter);
+            success.setText("Username and password are wrong!");
             if(counter == 0)
             {
                 login.setEnabled(false);
