@@ -47,4 +47,16 @@ public class TestController {
         songList.remove(title);
         return songList;
     }
+	
+	@GetMapping("/songlist/contains/{title}")
+    public @ResponseBody Boolean containsSong(@PathVariable String title) {
+        boolean contains;
+        if (songList.containsKey(title) == true) {
+        	contains = true;
+        }
+        else {
+        	contains = false;
+        }
+        return contains;
+    }
 }
