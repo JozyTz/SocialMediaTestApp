@@ -1,10 +1,8 @@
 package project.app.model;
 
-import java.util.List;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class User {
