@@ -5,28 +5,33 @@ import javax.persistence.*;
 
 
 @Entity
+@Table(name="users")
 public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
+	
+	@Column(nullable=false, unique=true)
 	private String username;
+	
+	@Column(nullable=false)
 	private String password;
 	
 
 	public User() {}
 	
-	public User(String username, int id) {
+	public User(String username, String password) {
 		this.username = username;
-		this.id = id;
+		this.password = password;
 	}
 	
 	
-	public Integer getID() {
+	public Long getID() {
 		return id;
 	}
 	
-	public void setID(int id) {
+	public void setID(Long id) {
 		this.id = id;
 	}
 	
