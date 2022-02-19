@@ -8,7 +8,7 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import onetoone.Users.User;
+import onetoone.Animals.Animals;
 
 @Entity
 public class Animals {
@@ -51,5 +51,12 @@ public class Animals {
     }
     public void setCost(int cost) {
     	this.cost = cost;
+    }
+    public void setAnimal(Animals animal) {
+    	id = animal.id;
+    	weight = animal.weight;
+    	age = animal.age;
+    	species = animal.species;
+    	cost = animal.cost;
     }
 }
