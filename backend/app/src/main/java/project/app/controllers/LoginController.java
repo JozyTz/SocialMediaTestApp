@@ -1,3 +1,4 @@
+<<<<<<< backend/app/src/main/java/project/app/controllers/LoginController.java
 package project.app.controllers;
 
 import java.util.List;
@@ -41,4 +42,10 @@ public class LoginController {
 	User newUser(@RequestBody User newUser) {
 		return userRepository.save(newUser);
 	}
+	//	@DeleteMapping("/users/{id}") 
+//    public @ResponseBody HashMap<String, Tests> deleteSong(@PathVariable String title) {
+//        songList.remove(title);
+//        return songList;
+//    }
 }
+>>>>>>> backend/app/src/main/java/project/app/controllers/LoginController.java
