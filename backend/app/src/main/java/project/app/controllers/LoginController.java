@@ -36,9 +36,10 @@ public class LoginController {
 		return userRepository.save(newUser);
 	}
 	
-//	@DeleteMapping("/users/{id}") 
-//    public @ResponseBody HashMap<String, Tests> deleteSong(@PathVariable String title) {
-//        songList.remove(title);
-//        return songList;
-//    }
+	@DeleteMapping("/users/{id}")
+    String deleteUser(@PathVariable int id){
+        userRepository.deleteById(id);
+        return "Success";
+	}
+
 }
