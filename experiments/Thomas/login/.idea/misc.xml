@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/coms309/project/2_do_5/experiments/Thomas/login/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.110546875" />
-        <entry key="..\:/coms309/project/2_do_5/experiments/Thomas/login/app/src/main/res/layout/activity_login.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/experiments/Kaya/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/experiments/Kaya/app/src/main/res/layout/activity_second_page.xml" value="0.1" />
+        <entry key="..\:/coms309/project/2_do_5/experiments/Kaya/Login/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/coms309/project/2_do_5/experiments/Kaya/Login/app/src/main/res/layout/activity_second_page.xml" value="0.36666666666666664" />
+        <entry key="..\:/coms309/project/2_do_5/experiments/Thomas/Login/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/coms309/project/2_do_5/experiments/Thomas/Login/app/src/main/res/layout/activity_second_page.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
