@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Sign Up Here", Toast.LENGTH_SHORT).show();
                 openSignUpPage();
             }
         });
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openSignUpPage() {
-        Intent intent = new Intent(this, SignUpPage.class);
-        startActivity(intent);
+        Intent signUp = new Intent(this, SignUpPage.class);
+        startActivity(signUp);
     }
 }
