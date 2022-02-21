@@ -7,6 +7,20 @@
     android:background="@drawable/trythisbackground"
     tools:context=".MainActivity">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginbutton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Sign Up"
+        android:textColor="#000000" />
+
     <TextView
         android:id="@+id/signin"
         android:layout_width="match_parent"
@@ -49,24 +63,29 @@
         android:drawablePadding="20dp"/>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loginbutton"
         android:layout_below="@id/password"
-        android:text="LOGIN"
-        android:backgroundTint="@color/design_default_color_secondary"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="LOGIN" />
 
     <TextView
+        android:id="@+id/forgotpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/forgotpass"
         android:layout_below="@id/loginbutton"
-        android:text="Forgot password?"
-        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Forgot password?"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

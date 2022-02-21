@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         TextView password = (TextView) findViewById(R.id.password);
 
         MaterialButton loginbutton = (MaterialButton) findViewById(R.id.loginbutton);
+        MaterialButton signUp = (MaterialButton) findViewById(R.id.loginbutton3);
 
         //admin and admin
 
@@ -38,11 +39,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        signUp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openSignUpPage();
+            }
+        });
 
     }
 
     public void openSecondPage() {
         Intent intent = new Intent(this, SecondPage.class);
+        startActivity(intent);
+    }
+
+    public void openSignUpPage() {
+        Intent intent = new Intent(this, SignUpPage.class);
         startActivity(intent);
     }
 }
