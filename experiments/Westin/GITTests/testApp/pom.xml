@@ -11,9 +11,9 @@
 	
 	
 	<groupId>project</groupId>
-	<artifactId>app</artifactId>
+	<artifactId>testApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>app</name>
+	<name>testApp</name>
 	<description>Backend</description>
 	<properties>
 		<java.version>11</java.version>
