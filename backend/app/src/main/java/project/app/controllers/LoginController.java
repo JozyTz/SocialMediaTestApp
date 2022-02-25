@@ -1,6 +1,7 @@
 package project.app.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,11 +26,11 @@ public class LoginController {
 		return userRepository.findAll();
 	}
 	
-	@GetMapping("users/{id}")
-	List<User> GetUserByID(){
-		return userRepository.findAll();
-		//TODO
+	@GetMapping(path = "/users/{id}")
+	public Optional<User> findUserById(@PathVariable Long id) {  
+		return userRepository.findById(id);
 	}
+
 	
 	@PostMapping("/users/create")
 	User newUser(@RequestBody User newUser) {
