@@ -39,6 +39,33 @@
         android:layout_below="@id/loggedin"
         android:layout_centerHorizontal="true"/>
 
+    <Button
+        android:id="@+id/btnStringRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="String Request" />
+
+    <Button
+        android:id="@+id/btnJsonRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnStringRequest"
+        android:text="Json Request" />
+
+    <Button
+        android:id="@+id/btnImageRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnJsonRequest"
+        android:text="Image Request" />
+
+<!--    <Spinner-->
+<!--        android:id="@+id/spinner"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/btnJsonRequest"-->
+<!--        android:layout_marginTop="114dp"-->
+<!--        android:text="Spinny spinner" />-->
 
 
 </RelativeLayout>
