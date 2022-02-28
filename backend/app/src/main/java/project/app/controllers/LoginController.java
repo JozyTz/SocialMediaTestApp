@@ -16,7 +16,7 @@ public class LoginController {
 	UserRepository userRepository;
 	
 	
-	@GetMapping("users/all")
+	@GetMapping("/users")
 	List<User> GetAllUsers(){
 		return userRepository.findAll();
 	}
