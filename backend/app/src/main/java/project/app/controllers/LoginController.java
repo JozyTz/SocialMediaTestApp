@@ -33,7 +33,7 @@ public class LoginController {
 	}
 	
 	@DeleteMapping("/users/{id}")
-    String deleteUser(@PathVariable long id){
+    String deleteUser(@PathVariable Long id){
         userRepository.deleteById(id);
         return "Success";
 	}
