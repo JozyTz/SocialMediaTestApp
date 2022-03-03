@@ -23,7 +23,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	 * @param username
 	 * @return
 	 */
-	User findByUsername(String username);
+	User findByUsernameAndPassword(String username, String password);
 	
 	/**
 	 * deletes a user by their ID
