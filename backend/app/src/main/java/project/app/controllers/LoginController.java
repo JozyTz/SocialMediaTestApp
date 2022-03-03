@@ -38,7 +38,7 @@ public class LoginController {
         return "Success";
 	}
 	
-	@PostMapping(value = "/login", headers = "Accept=application/json")
+	@PostMapping(value = "/login", produces = "application/json")
 	String login(@RequestBody User auth) {
 		User user = userRepository.findByUsername(auth.getUsername());
 		if (user != null) {
