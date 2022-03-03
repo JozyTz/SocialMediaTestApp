@@ -38,20 +38,21 @@ public class LoginController {
         return "Success";
 	}
 	
-	@PostMapping("/login")
-	String login(@RequestBody User auth) {
+	@PostMapping(value = "/login", produces = "application/json")
+	User login(@RequestBody User auth) {
 		User user = userRepository.findByUsername(auth.getUsername());
 		if (user != null) {
 			String password = user.getPassword();
 			if (password.equals(auth.getPassword())) {
-				return user.getID() + "";
+				return user;
 			}
 			
 			else {
-				return "Invalid password";
+				System.out.println("Invalid password");
+				return null;
 			}
 		}
-		return "Invalid username";
+		System.out.println("Invalid user");
+		return null;
 	}
-
 }
