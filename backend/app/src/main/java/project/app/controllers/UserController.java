@@ -1,5 +1,7 @@
 package project.app.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,5 +51,11 @@ public class UserController {
 		else { 
 			return new JSONResponse(false, "Invalid user(s)");
 		}
+	}
+	
+	@GetMapping(path = "users/{userId}/friends")
+	public List<User> getFriends(@PathVariable("userId") long userIdNum) {
+		User user = userRepository.findById(userIdNum);
+		return user.getFriends();
 	}
 }
