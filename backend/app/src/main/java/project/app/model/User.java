@@ -1,6 +1,8 @@
 package project.app.model;
 
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,17 +14,27 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="userid")
 	private Long id;
+	
+	@JsonIgnore
+	@ManyToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+	protected List<User> friends = null;
+	
+	//@ManyToMany(mappedBy = "friends")
+	//protected List<User> befriended = null;
 	
 	@Column(nullable=false, unique=true)
 	private String username;
 	
-	@JsonIgnore
 	@Column(nullable=false)
 	private String password;
 	
 	@Column(nullable=false, unique=true)
 	private String email;
+	
+	
+
 	
 
 	public User() {}
@@ -66,6 +78,18 @@ public class User {
 	
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public void addFriend(User user) {
+		friends.add(user);
+	}
+	
+	public void removeFriend(User user) {
+		friends.remove(user);
+	}
+	
+	public List<User> getFriends() {
+		return friends;
 	}
 	
     @Override

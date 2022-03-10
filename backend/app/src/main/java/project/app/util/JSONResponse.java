@@ -9,21 +9,20 @@ public class JSONResponse {
 
 
 	
-	private boolean pass;
+	private boolean success;
 	private Object item;
 
-	public JSONResponse(Boolean pass, Object item) {
-		this.setIsPassed(pass);
+	public JSONResponse(Boolean success, Object item) {
+		this.setSuccessStatus(success);
 		this.setItem(item);
 	}
 	
-	
-	public boolean getIsPassed() {
-		return pass;
+	public boolean getSuccessStatus() {
+		return success;
 	}
 
-	public void setIsPassed(boolean pass) {
-		this.pass = pass;
+	public void setSuccessStatus(boolean success) {
+		this.success = success;
 	}
 
 	public Object getItem() {
