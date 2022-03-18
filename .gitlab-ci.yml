@@ -8,6 +8,8 @@ maven-build:   #this is a JOB
     - springboot_tag  # this is LINK to the shell runner on the remote-server 
   script:
     - cd backend
+    - cd app
+    - mvn package
 
 android-build: #this is another job
   image: javiersantos/android-ci:latest      # this is a directive to DOCKER
