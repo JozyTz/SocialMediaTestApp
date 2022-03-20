@@ -15,7 +15,7 @@ maven-test:
   tags:
     - springboot_tag
   script:
-    - cd backend
+    - cd backend/app
     - mvn test
   artifacts:
     paths:
