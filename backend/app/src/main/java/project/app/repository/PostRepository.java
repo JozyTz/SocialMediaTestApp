@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import project.app.model.Comment;
+import project.app.model.Post;
 
 
 @Repository
-public interface CommentRepository extends JpaRepository<Comment, Long> {
+public interface PostRepository extends JpaRepository<Post, Long> {
 	
-	List<Comment> findByUserId(Long userID);
+	List<Post> findByUserId(String userID);
 	
+	//List<Comment> findByPost(String post);
 }
-
