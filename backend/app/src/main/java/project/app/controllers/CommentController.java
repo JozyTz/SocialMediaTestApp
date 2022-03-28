@@ -34,7 +34,8 @@ public class CommentController {
 		Post tmpPost = postRepo.findById(postIdNum).get();
 		
 		if (tmpUser != null && tmpPost != null) {
-			comment.setUser(tmpUser);
+			//comment.setUser(tmpUser);
+			tmpUser.addComment(comment);
 			comment.setPost(tmpPost);
 			commentRepo.save(comment);
 			return new JSONResponse(true, comment);

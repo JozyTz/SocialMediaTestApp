@@ -22,9 +22,6 @@ public class User {
 	@ManyToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
 	protected List<User> friends = null;
 	
-	//@ManyToMany(mappedBy = "friends")
-	//protected List<User> befriended = null;
-	
 
 	@OneToMany
 	private List<Comment> comments;
