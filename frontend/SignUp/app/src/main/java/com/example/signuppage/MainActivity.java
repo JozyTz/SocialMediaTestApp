@@ -23,6 +23,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity
 {
     Button singUp;
+    //Server server;
     private com.android.volley.toolbox.Volley Volley;
 
     @Override
@@ -58,27 +59,7 @@ public class MainActivity extends AppCompatActivity
 
         if(password.getText().toString().equals(confirmed.getText().toString()) && password.getText().toString().length() >= 5)
         {
-            //Toast.makeText(MainActivity.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
-            try {
-                //input your API parameters
-                object.put("username","tglass");
-                object.put("password","glass");
-                object.put("email","tglass@gmail.com");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, object, new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            Toast.makeText(getApplicationContext(), "Worked", Toast.LENGTH_SHORT).show();
-                        }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
-                }
-            });
-            requestQueue.add(jsonObjectRequest);
+            Toast.makeText(MainActivity.this, "Passwords match!", Toast.LENGTH_SHORT).show();
         }else
         {
             Toast.makeText(MainActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
