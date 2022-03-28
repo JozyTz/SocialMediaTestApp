@@ -1,15 +1,15 @@
 package project.app.model;
 
 
+import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-@Entity
-@Table(name="users")
+@Entity(name = "User")
+@Table(name = "users")
 public class User {
 	
 	@Id
@@ -17,12 +17,18 @@ public class User {
 	@Column(name="userid")
 	private Long id;
 	
+	
 	@JsonIgnore
 	@ManyToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL)
 	protected List<User> friends = null;
 	
 	//@ManyToMany(mappedBy = "friends")
 	//protected List<User> befriended = null;
+	
+
+	@OneToMany
+	private List<Comment> comments;
+	
 	
 	@Column(nullable=false, unique=true)
 	private String username;
@@ -90,6 +96,20 @@ public class User {
 	
 	public List<User> getFriends() {
 		return friends;
+	}
+	
+	public void addComment(Comment comment) {
+		comments.add(comment);
+		comment.setUser(this);
+	}
+	
+	public void removeComment(Comment comment) {
+		comments.remove(comment);
+		comment.setUser(null);
+	}
+	
+	public List<Comment> getComments(){
+		return comments;
 	}
 	
     @Override

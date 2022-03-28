@@ -2,7 +2,9 @@ package project.app.model;
 
 import javax.persistence.*;
 
-@Entity
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity(name = "Comment")
 @Table(name = "comments")
 public class Comment {
 	
@@ -10,8 +12,9 @@ public class Comment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column
-	private String username;
+	@JsonIgnore
+	@ManyToOne(cascade = CascadeType.ALL)
+	private User user;
 	
 	@Column
 	private String commentString;
@@ -28,23 +31,22 @@ public class Comment {
 	 * @param username
 	 * @param commentString
 	 */
-	public Comment(String username, String commentString) {
-		this.username = username;
-		this.commentString = commentString;
-		likes = 0;
-		dislikes = 0;
+	public Comment(User user) {
+		this.user = user;
 	}
+	
+	public Comment() {}
 	
 	
 	/**
 	 * username getter/setters
 	 */
-	public String getUsername() {
-		return username;
+	public User getUser() {
+		return user;
 	}
 	
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 	
