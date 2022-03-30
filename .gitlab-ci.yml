@@ -1,28 +1,28 @@
 stages:
-  - maventry
-  - maventest
+  # - maventry
+  # - maventest
   - androidtry
   - androidtest
   - mavenDeploy
 
-maven-build:   #this is a JOB
-  stage: maventry
-  tags:
-    - springboot_tag  # this is LINK to the shell runner on the remote-server 
-  script:
-    - cd backend/app
-    - mvn package -B
+# maven-build:   #this is a JOB
+#   stage: maventry
+#   tags:
+#     - springboot_tag  # this is LINK to the shell runner on the remote-server 
+#   script:
+#     - cd backend/app
+#     - mvn package -B
 
-maven-test:
-  stage: maventest
-  tags:
-    - springboot_tag
-  script:
-    - cd backend/app
-    - mvn test
-  artifacts:
-    paths:
-      - backend/target/*.jar
+# maven-test:
+#   stage: maventest
+#   tags:
+#     - springboot_tag
+#   script:
+#     - cd backend/app
+#     - mvn test
+#   artifacts:
+#     paths:
+#       - backend/target/*.jar
 
 android-build: #this is another job
   image: gjandres/android-ci:latest      # this is a directive to DOCKER
