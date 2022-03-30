@@ -2,6 +2,7 @@ stages:
   - maventry
   - maventest
   - androidtry
+  - androidtest
   - mavenDeploy
 
 maven-build:   #this is a JOB
@@ -34,6 +35,18 @@ android-build: #this is another job
   script:
     - cd frontend/login
     - ./gradlew build
+
+android-test:
+  image: gjandres/android-ci:latest
+  stage: androidtest
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./frontend/login/gradlew
+  tags:
+   - android_tag
+  script:
+    - cd frontend/login
+    - ./gradlew test
 
 
 autoDeploy:
