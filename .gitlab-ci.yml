@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 stages:
   - maventry
@@ -48,4 +49,67 @@ autoDeploy:
     - sudo systemctl stop system-web-demo
     - sudo systemctl start system-web-demo
 
+=======
+stages:
+  - maventry
+  - maventest
+  - androidtry
+  - androidtest
+  - mavenDeploy
+
+maven-build:   #this is a JOB
+  stage: maventry
+  tags:
+    - springboot_tag  # this is LINK to the shell runner on the remote-server 
+  script:
+    - cd backend/app
+    - mvn package
+
+maven-test:
+  stage: maventest
+  tags:
+    - springboot_tag
+  script:
+    - cd backend/app
+    - mvn test
+  artifacts:
+    paths:
+      - backend/target/*.jar
+
+android-build: #this is another job
+  image: gjandres/android-ci:latest      # this is a directive to DOCKER
+  stage: androidtry
+  tags:
+   - android_tag         #this is LINK to the docker runner on the remote-server        
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./frontend/login/gradlew
+  script:
+    - cd frontend/login
+    - ./gradlew build
+
+android-test:
+  image: gjandres/android-ci:latest
+  stage: androidtest
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./frontend/login/gradlew
+  tags:
+   - android_tag
+  script:
+    - cd frontend/login
+    - ./gradlew test
+
+
+autoDeploy:
+  stage: mavenDeploy  #do make a stage with same name!
+  tags:
+   - springboot_tag
+  script:
+    - cd backend/app
+    - mvn package
+    - sudo mv target/*.jar /target/web-demo.jar 
+    - sudo systemctl stop system-web-demo
+    - sudo systemctl start system-web-demo
+>>>>>>> 586764c815a25123b302e83d448de100f1479dd8
 
