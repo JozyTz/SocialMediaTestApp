@@ -13,5 +13,5 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 	
 	List<Post> findByUserId(String userID);
 	
-	//List<Comment> findByPost(String post);
+	Post findById(long postIdNum);
 }

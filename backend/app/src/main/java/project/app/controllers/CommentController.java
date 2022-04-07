@@ -16,6 +16,7 @@ import project.app.util.JSONResponse;
 
 @RestController
 public class CommentController {
+	
 	@Autowired
 	CommentRepository commentRepo;
 	
@@ -24,7 +25,7 @@ public class CommentController {
 	
 	@Autowired
 	PostRepository postRepo;
-	
+
 	/**
 	 *	Create comment on a post
 	 */
@@ -100,5 +101,16 @@ public class CommentController {
 	{
 			User user = userRepo.findById(userIdNum);
 			return user.getComments();
+	}
+
+
+	/**
+	* Get all comments on a post
+	*/
+	@GetMapping(path = "/posts/{postId}/comments")
+	public List<Comment> getPostComments (@PathVariable("postId") long postIdNum)
+	{
+		Post post = postRepo.findById(postIdNum);
+		return post.getComments();
 	}
 }
