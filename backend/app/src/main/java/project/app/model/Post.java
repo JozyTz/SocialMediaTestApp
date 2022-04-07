@@ -1,5 +1,7 @@
 package project.app.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import org.hibernate.annotations.OnDelete;
@@ -32,6 +34,9 @@ public class Post {
 	
 	@Column
 	private int dislikes;
+	
+	@OneToMany
+	private List<Comment> comments;
 	
 	
 	public Post(Long id, String title, String message, User user) {
@@ -91,6 +96,20 @@ public class Post {
 	}
 	public void setDislikes(int dislikes) {
 		this.dislikes = dislikes;
+	}
+	
+	public void addComment(Comment comment) {
+		comments.add(comment);
+		comment.setPost(this);
+	}
+	
+	public void removeComment(Comment comment) {
+		comments.remove(comment);
+		comment.setPost(null);
+	}
+	
+	public List<Comment> getComments(){
+		return comments;
 	}
 }
 

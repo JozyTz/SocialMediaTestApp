@@ -26,4 +26,14 @@ public class PostController {
 	@Autowired
 	UserRepository userRepo;
 	
+	
+	
+	
+	@GetMapping("/post/{id}")
+	public Optional<Post> findUserById(@PathVariable Long id) {  
+		return postRepo.findById(id);
+	}
+	
+	
+	
 }

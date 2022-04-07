@@ -26,6 +26,9 @@ public class User {
 	@OneToMany
 	private List<Comment> comments;
 	
+	@OneToMany
+	private List<Post> posts;
+	
 	
 	@Column(nullable=false, unique=true)
 	private String username;
@@ -107,6 +110,20 @@ public class User {
 	
 	public List<Comment> getComments(){
 		return comments;
+	}
+	
+	public void addPost(Post post) {
+		posts.add(post);
+//		post.setUser(this);
+	}
+	
+	public void removePost(Post post) {
+		posts.remove(post);
+//		post.setUser(null);
+	}
+	
+	public List<Post> getPosts(){
+		return posts;
 	}
 	
     @Override
