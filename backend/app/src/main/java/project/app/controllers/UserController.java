@@ -38,20 +38,22 @@ public class UserController {
 	public @ResponseBody JSONResponse removeFriend(@PathVariable("userId") long userIdNum, @PathVariable("friendId") long friendIdNum) {
 		
 		User user = userRepository.findById(userIdNum);
-		User friendToAdd = userRepository.findById(friendIdNum);
+		User friendToRemove = userRepository.findById(friendIdNum);
 		
-		if (user != null && friendToAdd != null) {
-			user.removeFriend(friendToAdd);
-			friendToAdd.removeFriend(user);
+		if (user != null && friendToRemove != null) {
+			user.removeFriend(friendToRemove);
+			friendToRemove.removeFriend(user);
 			userRepository.save(user);
-			userRepository.save(friendToAdd);
+			userRepository.save(friendToRemove);
 			
-			return new JSONResponse(true, friendToAdd);
+			return new JSONResponse(true, friendToRemove);
 		}
 		else { 
 			return new JSONResponse(false, "Invalid user(s)");
 		}
 	}
+	
+	
 	
 	@GetMapping(path = "users/{userId}/friends")
 	public List<User> getFriends(@PathVariable("userId") long userIdNum) {
