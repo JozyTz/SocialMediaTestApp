@@ -41,12 +41,6 @@ public class PostController {
 		}
 	}
 	
-	@GetMapping("/comment/{comment_id}/post")
-	public Post getCommentPosts (@PathVariable ("comment_id") long commentIdNum) {  
-		Post post = postRepo.findByCommentId(commentIdNum);
-		return post;
-	}
-	
 	
 	@GetMapping("/users/{user_id}/posts")
 	public List<Post> getUserPosts (@PathVariable ("user_id") String userIdNum) {  

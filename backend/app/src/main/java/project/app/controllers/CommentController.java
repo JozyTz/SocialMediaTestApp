@@ -54,7 +54,7 @@ public class CommentController {
 	
 	@GetMapping(path = "/posts/{postId}/comments")
 	public List<Comment> getPostComments (@PathVariable("postId") long postIdNum) {
-		List<Comment> comment = commentRepo.findByPostId(postIdNum);
-		return comment;
+		Post post = postRepo.findById(postIdNum);
+		return post.getComments();
 }
 }
