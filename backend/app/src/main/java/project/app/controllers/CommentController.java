@@ -51,4 +51,10 @@ public class CommentController {
 			User user = userRepo.findById(userIdNum);
 			return user.getComments();
 	}
+	
+	@GetMapping(path = "/posts/{postId}/comments")
+	public List<Comment> getPostComments (@PathVariable("postId") long postIdNum) {
+		List<Comment> comment = commentRepo.findByPostId(postIdNum);
+		return comment;
+}
 }
