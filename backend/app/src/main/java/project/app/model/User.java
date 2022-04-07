@@ -114,12 +114,12 @@ public class User {
 	
 	public void addPost(Post post) {
 		posts.add(post);
-//		post.setUser(this);
+		post.setUser(this);
 	}
 	
 	public void removePost(Post post) {
 		posts.remove(post);
-//		post.setUser(null);
+		post.setUser(null);
 	}
 	
 	public List<Post> getPosts(){

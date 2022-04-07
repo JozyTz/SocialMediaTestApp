@@ -26,12 +26,32 @@ public class PostController {
 	@Autowired
 	UserRepository userRepo;
 	
+	@PostMapping(path = "/post/{user_id}")
+	public @ResponseBody JSONResponse createPost (@RequestBody Post post, @PathVariable("userId") Long userIdNum) {
+		
+		User tmpUser = userRepo.findById(userIdNum).get();
+		
+		if (tmpUser != null) {
+			tmpUser.addPost(post);
+			postRepo.save(post);
+			return new JSONResponse(true, post);
+		}
+		else {
+			return new JSONResponse(false, "Invalid User");
+		}
+	}
+	
+	@GetMapping("/comment/{comment_id}/post")
+	public Post getCommentPosts (@PathVariable ("comment_id") long commentIdNum) {  
+		Post post = postRepo.findByCommentId(commentIdNum);
+		return post;
+	}
 	
 	
-	
-	@GetMapping("/post/{id}")
-	public Optional<Post> findUserById(@PathVariable Long id) {  
-		return postRepo.findById(id);
+	@GetMapping("/users/{user_id}/posts")
+	public List<Post> getUserPosts (@PathVariable ("user_id") String userIdNum) {  
+		List<Post> post = postRepo.findByUserId(userIdNum);
+		return post;
 	}
 	
 	
