@@ -44,7 +44,7 @@ public class PostController {
 	
 	@GetMapping("/users/{user_id}/posts")
 	public List<Post> getUserPosts (@PathVariable ("user_id") long userIdNum) {  
-		User user = userRepo.findByUserId(userIdNum);
+		User user = userRepo.findById(userIdNum);
 		return user.getPosts();
 	}
 	
