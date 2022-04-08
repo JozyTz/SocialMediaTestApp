@@ -1,7 +1,9 @@
+
 stages:
   - maventry
   - maventest
   - androidtry
+  - androidtest
   - mavenDeploy
 
 maven-build:   #this is a JOB
@@ -10,7 +12,7 @@ maven-build:   #this is a JOB
     - springboot_tag  # this is LINK to the shell runner on the remote-server 
   script:
     - cd backend/app
-    - mvn package -B
+    - mvn package
 
 maven-test:
   stage: maventest
@@ -24,7 +26,7 @@ maven-test:
       - backend/target/*.jar
 
 android-build: #this is another job
-  image: javiersantos/android-ci:latest      # this is a directive to DOCKER
+  image: gjandres/android-ci:latest      # this is a directive to DOCKER
   stage: androidtry
   tags:
    - android_tag         #this is LINK to the docker runner on the remote-server        
@@ -34,6 +36,18 @@ android-build: #this is another job
   script:
     - cd frontend/login
     - ./gradlew build
+
+android-test:
+  image: gjandres/android-ci:latest
+  stage: androidtest
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./frontend/login/gradlew
+  tags:
+   - android_tag
+  script:
+    - cd frontend/login
+    - ./gradlew test
 
 
 autoDeploy:
