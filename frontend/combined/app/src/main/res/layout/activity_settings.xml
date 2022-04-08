@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2E2E2E"
+    android:backgroundTint="#2E2E2E"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2E2E2E"
+        android:backgroundTint="#2E2E2E"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/Notifications"
+            android:layout_width="409dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/border"
+            android:text="Notifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/UserSettings" />
+
+        <Button
+            android:id="@+id/Delete"
+            android:layout_width="409dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/border"
+            android:text="Delete Account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Notifications" />
+
+        <Button
+            android:id="@+id/UserSettings"
+            android:layout_width="409dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/border"
+            android:text="User"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DisplaySettings" />
+
+        <Button
+            android:id="@+id/DisplaySettings"
+            android:layout_width="409dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/border"
+            android:backgroundTint="#FFFFFF"
+            android:text="Display"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
