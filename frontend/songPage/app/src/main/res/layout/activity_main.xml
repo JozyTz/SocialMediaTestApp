@@ -23,8 +23,8 @@
         android:id="@+id/songTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="147dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="148dp"
         android:text="Song Title"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -37,9 +37,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="152dp"
-        android:background="@android:drawable/screen_background_light_transparent"
+        android:background="?android:attr/selectableItemBackground"
         android:text="Button"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="62dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="76dp"
+        android:background="@android:drawable/ic_media_play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 </androidx.constraintlayout.widget.ConstraintLayout>
