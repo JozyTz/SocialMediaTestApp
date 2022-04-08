@@ -11,10 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Combined">
         <activity android:name=".settingsActivity"></activity>
-        <activity android:name=".uploadActivity"></activity>
         <activity android:name=".songActivity"></activity>
         <activity android:name=".userSettings"></activity>
+        <activity android:name=".songUpload"></activity>
         <activity android:name=".displaySettings"></activity>
+        <activity android:name=".uploadActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

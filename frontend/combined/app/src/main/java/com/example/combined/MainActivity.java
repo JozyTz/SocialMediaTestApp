@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
 
     public void uploadPage()
     {
-        Intent intent = new Intent(this, uploadActivity.class);
+        Intent intent = new Intent(this, songUpload.class);
         startActivity(intent);
     }
 
