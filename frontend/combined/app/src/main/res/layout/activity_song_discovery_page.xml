@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/trythisbackground"
+    tools:context=".SecondPage">
+
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/banner"-->
+<!--        android:drawableLeft="@drawable/ic_in_the_pink_puff"-->
+<!--        android:drawablePadding="50dp"-->
+<!--        android:hint="In The Pink Puff"-->
+<!--        android:padding="20dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textColorHint="@color/black" />-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/testbutton"
+        android:layout_alignParentBottom="true"
+        android:text="Test"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/banner"
+            android:layout_centerVertical="true"
+            android:id="@+id/popularSongsTitleScreen"
+            android:background="@color/gray"
+            android:hint="Popular Songs"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"
+            android:padding="20dp"
+            />
+
+    <ListView
+        android:layout_below="@id/popularSongsTitleScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/discoveryPageSongList"
+        android:backgroundTint="@color/white"
+        android:dividerHeight="10.0sp"
+        android:padding="8dp"
+/>
+
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:layout_centerVertical="true"-->
+<!--        android:id="@+id/song10"-->
+<!--        android:background="@color/gray"-->
+<!--        android:hint="Song of Gloom"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="20dp"-->
+<!--        android:drawableLeft="@drawable/ic_baseline_play_arrow_24"-->
+<!--        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"-->
+<!--        android:drawablePadding="20dp"/>-->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/song11"-->
+<!--        android:layout_below="@id/song10"-->
+<!--        android:background="@color/gray"-->
+<!--        android:hint="Song of Gloom"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="20dp"-->
+<!--        android:drawableLeft="@drawable/ic_baseline_play_arrow_24"-->
+<!--        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"-->
+<!--        android:drawablePadding="20dp"/>-->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/song12"-->
+<!--        android:layout_below="@id/song11"-->
+<!--        android:background="@color/gray"-->
+<!--        android:hint="Song of Gloom"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="20dp"-->
+<!--        android:drawableLeft="@drawable/ic_baseline_play_arrow_24"-->
+<!--        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"-->
+<!--        android:drawablePadding="20dp"/>-->
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:elevation="20dp"
+
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+
+
+
+</RelativeLayout>

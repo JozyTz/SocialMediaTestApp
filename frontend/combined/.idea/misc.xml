@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.1" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/layout/activity_comments.xml" value="0.12715298885511653" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/layout/activity_login.xml" value="0.12132725430597771" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/layout/activity_main.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/layout/activity_profile.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/layout/activity_second_page.xml" value="0.1" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Users/kayaz/Documents/2_do_5/frontend/combined/app/src/main/res/menu/menu_page_navigation.xml" value="0.10989583333333333" />
         <entry key="..\:/coms309/project/2_do_5/frontend/combined/app/src/main/res/drawable/border.xml" value="0.1645" />
         <entry key="..\:/coms309/project/2_do_5/frontend/combined/app/src/main/res/drawable/circle.xml" value="0.1645" />
         <entry key="..\:/coms309/project/2_do_5/frontend/combined/app/src/main/res/layout/activity_display.xml" value="0.29347826086956524" />

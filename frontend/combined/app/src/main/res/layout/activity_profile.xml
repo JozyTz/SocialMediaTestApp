@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/trythisbackground">
+<!--    tools:context=".MainActivity">-->
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:gravity="center"
+        android:drawableTop="@drawable/profile_pic"
+        android:drawablePadding="20dp"
+        android:text= "Sad Bob"
+        android:textColor="@color/white"
+        android:paddingBottom="40dp"
+        android:textSize="20dp"
+        android:textStyle="" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/followers"
+        android:layout_below="@id/profile"
+        android:background="@color/gray"
+        android:hint="Followers: 7          Following: 298347"
+        android:textColorHint="@color/black"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        />
+
+    <ListView
+        android:layout_below="@id/followers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/profileSongList"
+        android:backgroundTint="@color/white"
+        android:dividerHeight="10.0sp"
+        android:padding="8dp"
+        />
+
+<!--    -->
+<!--    -->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/song1"-->
+<!--        android:layout_below="@id/followers"-->
+<!--        android:background="@color/gray"-->
+<!--        android:hint="Song of Sadness"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="20dp"-->
+<!--        android:drawableLeft="@drawable/ic_baseline_person_24"-->
+<!--        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"-->
+<!--        android:drawablePadding="20dp"/>-->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/song2"-->
+<!--        android:layout_below="@id/song1"-->
+<!--        android:background="@color/gray"-->
+<!--        android:hint="Song of Gloom"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="20dp"-->
+<!--        android:drawableLeft="@drawable/ic_baseline_person_24"-->
+<!--        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"-->
+<!--        android:drawablePadding="20dp"/>-->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/song3"-->
+<!--        android:layout_below="@id/song2"-->
+<!--        android:background="@color/gray"-->
+<!--        android:hint="Song of Despair"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="20dp"-->
+<!--        android:drawableLeft="@drawable/ic_baseline_person_24"-->
+<!--        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"-->
+<!--        android:drawablePadding="20dp"/>-->
+
+    <Button
+        android:id="@+id/follow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/followers"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/material_on_surface_stroke"
+        android:text="Follow" />
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
+

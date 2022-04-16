@@ -16,8 +16,12 @@
         <activity android:name=".songUpload"></activity>
         <activity android:name=".displaySettings"></activity>
         <activity android:name=".uploadActivity"></activity>
+        <activity android:name=".CommentActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SongDiscoveryActivity"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
