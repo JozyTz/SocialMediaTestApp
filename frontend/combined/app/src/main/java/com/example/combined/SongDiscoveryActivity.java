@@ -59,6 +59,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
     }
 
 
+
     @Override
     public void onClick (View view){
 
