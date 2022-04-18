@@ -22,25 +22,25 @@ public class AppApplication {
 	}
 	
 	
-	@Bean
-	public Docket myDocket() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.apiInfo(apiInfo())
-				.select()
-				.apis(RequestHandlerSelectors.any())
-				.paths(PathSelectors.any())
-				.build();
-	}
+	// @Bean
+	// public Docket myDocket() {
+	// 	return new Docket(DocumentationType.SWAGGER_2)
+	// 			.apiInfo(apiInfo())
+	// 			.select()
+	// 			.apis(RequestHandlerSelectors.any())
+	// 			.paths(PathSelectors.any())
+	// 			.build();
+	// }
 	
-	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder()
-				.title("2Do5_server")
-				.description("Hi, welcome to the backend of the Coms309 2Do5 project, here is the API document!")
-				.termsOfServiceUrl("https://coms-402-sd-8.cs.iastate.edu:8080/terms")
-				.contact(new Contact("YizhenXu","https://github.com/519045752/ComS402C_SD3","yizhenx@iastate.edu"))
-				.version("0.0.2")
-					.build();
-		}
+	// private ApiInfo apiInfo() {
+	// 	return new ApiInfoBuilder()
+	// 			.title("2Do5_server")
+	// 			.description("Hi, welcome to the backend of the Coms309 2Do5 project, here is the API document!")
+	// 			.termsOfServiceUrl("https://coms-402-sd-8.cs.iastate.edu:8080/terms")
+	// 			.contact(new Contact("YizhenXu","https://github.com/519045752/ComS402C_SD3","yizhenx@iastate.edu"))
+	// 			.version("0.0.2")
+	// 				.build();
+	// 	}
 }
 
 
