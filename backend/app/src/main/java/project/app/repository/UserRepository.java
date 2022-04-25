@@ -1,6 +1,7 @@
 package project.app.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import project.app.model.User;
 
@@ -8,6 +9,7 @@ import project.app.model.User;
  * Repo of users
  * 
  */
+@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
 	/**
