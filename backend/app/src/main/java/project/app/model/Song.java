@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
-@Entity(name = "Song")
-@Table(name = "songs")
+//@Entity(name = "Song")
+//@Table(name = "songs")
 public class Song {
 
 	@Id
