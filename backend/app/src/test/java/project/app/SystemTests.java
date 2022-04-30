@@ -61,6 +61,29 @@ public class SystemTests {
 	}
 	
 	
+	@Test
+	public void removeFriendTest() {
+	
+		//initialize friend status as not friends
+		friend();
+		
+		//friend user1 and user2 together
+		RestAssured.given()
+			.pathParam("userId", "1")
+			.pathParam("friendId", "2")
+		.when()
+			.post("users/{userId}/removeFriend/{friendId}")
+				
+		//Assert success status, friend username and friend id
+		.then()
+			.assertThat()
+				.statusCode(200)
+				.body(("item.id"),equalTo(2))
+				.body(("item.username"),equalTo("user2test"))
+				.body("successStatus",equalTo(true));
+	}
+	
+	
 	
 	//========================================================================
 	//=====							Helper Methods						 =====
@@ -75,5 +98,13 @@ public class SystemTests {
 			.pathParam("userId", "1")
 			.pathParam("friendId", "2")
 		.post("users/{userId}/removeFriend/{friendId}");
+	}
+	
+	public void friend()
+	{
+		RestAssured.given()
+			.pathParam("userId", "1")
+			.pathParam("friendId", "2")
+		.post("users/{userId}/addFriend/{friendId}");
 	}
 }
