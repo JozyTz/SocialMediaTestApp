@@ -62,8 +62,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //openProfilePage();
                 //openSignUpPage();
-                openSongDiscoveryActivity();
-                //openCommentPage();
+//                openSongDiscoveryActivity();
+                openCommentPage();
 
             }
         });
@@ -146,7 +146,7 @@ public class LoginActivity extends AppCompatActivity {
                         //msgResponse.setText(response.toString());
                         //hideProgressDialog();
                         if (response.toString().contains("true")) {
-                            openProfilePage();
+                            openSongDiscoveryActivity();
                             SharedPreferences prefs = getSharedPreferences("com.example.notesapp", Context.MODE_PRIVATE);
                         }
                     }

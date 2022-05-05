@@ -8,12 +8,11 @@
 
 
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/post1"
+            android:id="@+id/et1"
             android:background="@color/gray"
-            android:hint="This song sucks, why did you even post it :/"
             android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:layout_margin="10dp"
@@ -22,43 +21,15 @@
             android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"
             android:drawablePadding="20dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/post2"
-        android:layout_below="@+id/post1"
-        android:background="@color/gray"
-        android:hint="This song is great!!"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:layout_margin="10dp"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"
-        android:drawablePadding="20dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/post3"
-        android:layout_below="@+id/post2"
-        android:background="@color/gray"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:layout_margin="10dp"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:drawableRight="@drawable/ic_baseline_thumbs_up_down_24"
-        android:drawablePadding="20dp"/>
 
     <EditText
         android:id="@+id/postComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/postCommentButton"
         android:layout_marginBottom="20dp"
         android:background="@color/gray"
         android:drawableLeft="@drawable/ic_baseline_person_comment_24"
-        android:layout_above="@+id/postCommentButton"
         android:drawablePadding="10dp"
         android:hint="Add a comment..."
         android:padding="30dp"
