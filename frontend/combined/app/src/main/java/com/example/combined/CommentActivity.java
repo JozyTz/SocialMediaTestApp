@@ -60,7 +60,7 @@ public class CommentActivity extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     String s = postCommentButton.getText().toString();
-                                    e1.setText(s + " " + message);
+                                    e1.append(s + " " + message + "\n" );
                                 }
                             });
                             Log.d("", "run() returned: " + message);
