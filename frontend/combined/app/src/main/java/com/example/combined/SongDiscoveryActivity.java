@@ -51,7 +51,8 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
         testbutton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                testbutton.setText(" FUCK " + com.example.combined.LoginActivity.getUsername());
+                openComment();
+//                testbutton.setText(" FUCK " + com.example.combined.LoginActivity.getUsername());
 
             }
         });
@@ -83,7 +84,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
                 profilePage();
             case R.id.action_create_new_song:
                 //bring up create new song page
-                //createNewSongPage();
+                createNewSongPage();
                 return true;
             default:
             return super.onOptionsItemSelected(item);
@@ -149,10 +150,14 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
     }
 
     //creates the new song activity page, but that doesn't exist yet
-//    public void createNewSongPage() {
-//        Intent intent = new Intent(this, CreateNewSongActivity.class);
-//        startActivity(intent);
-//    }
+    public void createNewSongPage() {
+        Intent intent = new Intent(this, songActivity.class);
+        startActivity(intent);
+    }
+    public void openComment() {
+        Intent intent = new Intent(this, CommentActivity.class);
+        startActivity(intent);
+    }
 
 
 }

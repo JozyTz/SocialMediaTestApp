@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/testbutton"
         android:layout_alignParentBottom="true"
-        android:text="Test"
+        android:text="Enter Chatroom"
         android:backgroundTint="@color/design_default_color_secondary"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
