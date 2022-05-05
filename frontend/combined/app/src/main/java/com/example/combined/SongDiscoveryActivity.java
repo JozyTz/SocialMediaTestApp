@@ -65,7 +65,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
     public void onClick (View view){
 
     }
-    
+
 
     //Instantiate the navigation menu
     @Override
@@ -81,6 +81,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
             case R.id.action_profile:
                 //bring up profile page
                 profilePage();
+                return true;
             case R.id.action_create_new_song:
                 //bring up create new song page
                 createNewSongPage();
