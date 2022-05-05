@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
     public void songPage()
     {
         Intent intent = new Intent(this, songActivity.class);
-        ((globalVariables) this.getApplication()).setTitle(title);
+//        ((globalVariables) this.getApplication()).setTitle(title);
         startActivity(intent);
     }
 }

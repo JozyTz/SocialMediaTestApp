@@ -27,8 +27,8 @@ public class songActivity extends AppCompatActivity
         picture = (Button)findViewById(R.id.profilePicture);
         playButton = (Button)findViewById(R.id.playButton);
 
-        username.setText("Username");
-        songTitle.setText(((globalVariables) this.getApplication()).getTitle());
+        username.setText(LoginActivity.getUsername());
+//        songTitle.setText(((globalVariables) this.getApplication()).getTitle());
 
         picture.setOnClickListener(new View.OnClickListener() {
             @Override

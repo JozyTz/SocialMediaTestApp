@@ -65,8 +65,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
     public void onClick (View view){
 
     }
-
-    //});
+    
 
     //Instantiate the navigation menu
     @Override
@@ -85,17 +84,13 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
             case R.id.action_create_new_song:
                 //bring up create new song page
                 createNewSongPage();
-                return true;
+//                return true;
             default:
             return super.onOptionsItemSelected(item);
         }
     }
 
-    //creates the profile page when the button is pressed
-    public void profilePage() {
-        Intent intent = new Intent( this, com.example.combined.ProfileActivity.class);
-        startActivity(intent);
-    }
+
 
     public void runtimePermission(){
         Dexter.withContext(this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE).withListener(new PermissionListener() {
@@ -147,6 +142,12 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
         }
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, songs);
         listView.setAdapter(myAdapter);
+    }
+
+    //creates the profile page when the button is pressed
+    public void profilePage() {
+        Intent intent = new Intent( this, ProfileActivity.class);
+        startActivity(intent);
     }
 
     //creates the new song activity page, but that doesn't exist yet
