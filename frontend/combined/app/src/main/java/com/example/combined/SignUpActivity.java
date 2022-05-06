@@ -17,6 +17,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.regex.Pattern;
+
 public class SignUpActivity extends AppCompatActivity
 {
     Button signUp;
@@ -81,4 +83,20 @@ public class SignUpActivity extends AppCompatActivity
             Toast.makeText(SignUpActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+    public static boolean EmailValidation(CharSequence email){
+
+        return email != null && EMAIL_PATTERN.matcher(email).matches();
+    }
+
+    public static final Pattern EMAIL_PATTERN = Pattern.compile(
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                    "\\@" +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                    "(" +
+                    "\\." +
+                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                    ")+"
+    );
 }
