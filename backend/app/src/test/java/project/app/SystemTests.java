@@ -12,6 +12,8 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import project.app.repository.CommentRepository;
+import project.app.repository.PostRepository;
 import project.app.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,12 @@ public class SystemTests {
   
   	@Autowired
   	private UserRepository userRepo;
+  	
+  	@Autowired
+  	private CommentRepository commentRepo;
+  	
+  	@Autowired
+  	private PostRepository postRepo;
 
 	@Before
 	public void setUp() {
@@ -246,7 +254,53 @@ public class SystemTests {
 				.body(("item.username"),equalTo("user1test"));
 	}
 	
-
+//	@Test
+//	public void createAndDeleteCommentTest() {
+//		
+//		String newCommentTest = "{\"id\":\"21\",\"comment\":\"TestMessage\"}";
+//		RestAssured.given()
+//		.contentType(ContentType.JSON)
+//		.body(newCommentTest)
+//		.pathParam("userId", "1")
+//		.pathParam("postId", "1")
+//		.when()
+//			.post("/comment/{userId}/{postId}")
+//		.then()
+//			.assertThat()
+//				.statusCode(200)
+//				.body(("likes"),equalTo(0))
+//				.body(("dislikes"),equalTo(0))
+//				.body(("comment"),equalTo("TestMessage"));
+//		
+//		commentRepo.deleteById(21);
+//	}
+	
+	@Test
+	public void likeCommentTest() {
+		
+		RestAssured.given()
+		.pathParam("commentId", "21")
+		.when()
+			.post("/comment/{commentId}/like")
+		.then()
+			.assertThat()
+				.statusCode(200)
+				.body(equalTo(""));
+		
+	}
+	
+	@Test
+	public void dislikeCommentTest() {
+		
+		RestAssured.given()
+		.pathParam("commentId", "21")
+		.when()
+			.post("/comment/{commentId}/dislike")
+		.then()
+			.assertThat()
+				.statusCode(200)
+				.body(equalTo(""));
+	}
 
 	
 	
