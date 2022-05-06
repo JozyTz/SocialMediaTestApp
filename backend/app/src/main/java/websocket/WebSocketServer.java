@@ -25,6 +25,7 @@ public class WebSocketServer {
 	
 	private final Logger logger = LoggerFactory.getLogger(WebSocketServer.class);
 	
+	
 	@OnOpen
 	public void onOpen(Session session, @PathParam("username") String username) throws IOException {
 		logger.info("Test");

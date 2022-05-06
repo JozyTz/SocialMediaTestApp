@@ -2,12 +2,14 @@ package com.example.combined;
 
 import android.Manifest;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
 
     ListView listView;
     String[] songs;
+    MediaPlayer music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +84,10 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
             case R.id.action_profile:
                 //bring up profile page
                 profilePage();
+                return true;
+            case R.id.activity_settings:
+                //bring up profile page
+                settingsPage();
                 return true;
             case R.id.action_create_new_song:
                 //bring up create new song page
@@ -143,6 +150,15 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
         }
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, songs);
         listView.setAdapter(myAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(), "Now playing " + songs[i].toString(), Toast.LENGTH_SHORT).show();
+                //music = MediaPlayer.create(this, R.raw.nargo);
+            }
+        });
     }
 
     //creates the profile page when the button is pressed
@@ -153,11 +169,15 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
 
     //creates the new song activity page, but that doesn't exist yet
     public void createNewSongPage() {
-        Intent intent = new Intent(this, songActivity.class);
+        Intent intent = new Intent(this, songUpload.class);
         startActivity(intent);
     }
     public void openComment() {
         Intent intent = new Intent(this, CommentActivity.class);
+        startActivity(intent);
+    }
+    public void settingsPage() {
+        Intent intent = new Intent(this, settingsActivity.class);
         startActivity(intent);
     }
 

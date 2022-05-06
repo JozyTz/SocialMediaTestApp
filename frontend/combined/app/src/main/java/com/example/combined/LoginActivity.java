@@ -61,9 +61,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                openProfilePage();
-                //openSignUpPage();
+                openSignUpPage();
 //                openSongDiscoveryActivity();
-                openCommentPage();
+                //openCommentPage();
 
             }
         });

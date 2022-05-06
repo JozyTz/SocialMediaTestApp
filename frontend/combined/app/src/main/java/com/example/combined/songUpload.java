@@ -41,7 +41,7 @@ public class songUpload extends AppCompatActivity
     public void uploadNow()
     {
         Toast.makeText(getApplicationContext(), "Song successfully uploaded!", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, SongDiscoveryActivity.class);
         startActivity(intent);
     }
 
