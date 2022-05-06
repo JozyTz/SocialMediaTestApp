@@ -2,12 +2,14 @@ package com.example.combined;
 
 import android.Manifest;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
 
     ListView listView;
     String[] songs;
+    MediaPlayer music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +150,15 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
         }
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, songs);
         listView.setAdapter(myAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(), "Now playing " + songs[i].toString(), Toast.LENGTH_SHORT).show();
+                //music = MediaPlayer.create(this, R.raw.nargo);
+            }
+        });
     }
 
     //creates the profile page when the button is pressed

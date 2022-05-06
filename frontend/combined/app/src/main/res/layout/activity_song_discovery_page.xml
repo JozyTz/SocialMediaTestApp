@@ -44,14 +44,13 @@
             />
 
     <ListView
-        android:layout_below="@id/popularSongsTitleScreen"
+        android:id="@+id/discoveryPageSongList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/discoveryPageSongList"
+        android:layout_below="@id/popularSongsTitleScreen"
         android:backgroundTint="@color/white"
         android:dividerHeight="10.0sp"
-        android:padding="8dp"
-/>
+        android:padding="8dp" />
 
 <!--    <EditText-->
 <!--        android:layout_width="match_parent"-->
