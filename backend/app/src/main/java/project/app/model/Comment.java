@@ -44,6 +44,10 @@ public class Comment {
 	public Comment() {}
 	
 	
+	public Long getId() {
+		return id;
+	}
+	
 	/**
 	 * username getter/setters
 	 */

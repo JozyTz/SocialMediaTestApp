@@ -12,6 +12,9 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.response.ValidatableResponse;
+import project.app.model.Comment;
 import project.app.repository.CommentRepository;
 import project.app.repository.PostRepository;
 import project.app.repository.UserRepository;
@@ -44,6 +47,7 @@ public class SystemTests {
 		RestAssured.baseURI = "http://localhost";
 	}
 	
+	ArrayList<String> emptyArray = new ArrayList<String>();
 	
 	@Test
 	public void addFriendTest() {
@@ -239,8 +243,6 @@ public class SystemTests {
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("username", "user1test");
 		data.put("password", "1234");
-		
-		System.out.print(data.toString());
 
 		RestAssured.given()
 		.contentType(ContentType.JSON)
@@ -258,7 +260,7 @@ public class SystemTests {
 	public void createCommentTest() {
 		
 		String newCommentTest = "{\"comment\":\"TestMessage\"}";
-		RestAssured.given()
+		ValidatableResponse res = RestAssured.given()
 		.contentType(ContentType.JSON)
 		.body(newCommentTest)
 		.pathParam("userId", "1")
@@ -272,13 +274,34 @@ public class SystemTests {
 				.body(("item.dislikes"),equalTo(0))
 				.body(("item.comment"),equalTo("TestMessage"));
 		
+//		Comment testComment = commentRepo.findByMessage("TestMessage");
+//		
+//		commentRepo.deleteById(testComment.getId());
+		
+//		long commentId = 215;
+//		
+//		commentRepo.del;
 	}
+	
+	@Test
+	public void getPostsTest() {
+		RestAssured.given()
+		.pathParam("user_id", "1")
+		.when()
+			.get("/users/{user_id}/posts")
+		.then()
+			.assertThat()
+				.statusCode(200)
+		
+				.body(("$."),equalTo(emptyArray));
+	}
+	
 	
 	@Test
 	public void likeCommentTest() {
 		
 		RestAssured.given()
-		.pathParam("commentId", "21")
+		.pathParam("commentId", "1")
 		.when()
 			.post("/comment/{commentId}/like")
 		.then()
@@ -292,7 +315,7 @@ public class SystemTests {
 	public void dislikeCommentTest() {
 		
 		RestAssured.given()
-		.pathParam("commentId", "21")
+		.pathParam("commentId", "1")
 		.when()
 			.post("/comment/{commentId}/dislike")
 		.then()
