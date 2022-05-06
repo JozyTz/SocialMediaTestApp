@@ -2,25 +2,19 @@ package project.app;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
-import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
+import io.restassured.http.ContentType;
+import project.app.repository.UserRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
@@ -32,6 +26,9 @@ public class SystemTests {
 
   @LocalServerPort
 	int port;
+  
+  	@Autowired
+  	private UserRepository userRepo;
 
 	@Before
 	public void setUp() {
@@ -175,6 +172,82 @@ public class SystemTests {
 	}
 	
 	
+	@Test
+	public void getAllUsersTest() {
+		RestAssured.when()
+			.get("/users")
+		.then()
+			.assertThat()
+				.statusCode(200)
+				.body(("id"),hasItem(1))
+				.body(("id"),hasItem(2))
+				.body(("id"),hasItem(3))
+				.body(("username"),hasItem("user1test"))
+				.body(("username"),hasItem("user2test"))
+				.body(("username"),hasItem("user3test"));
+	}
+	
+	@Test
+	public void findUserByIdTest() {
+		RestAssured.given()
+		.pathParam("userId", "2")
+		.when()
+			.get("/users/{userId}")
+		.then()
+			.assertThat()
+				.statusCode(200)
+		
+				.body(("id"),equalTo(2))
+				.body(("username"),equalTo("user2test"))
+				
+				.body(("id"),not(equalTo(1)))
+				.body(("username"),not(equalTo("user1test")));
+	}
+	
+	@Test
+	public void createAndDeleteUserTest() {
+		
+		//mock up new user
+		String newUserTest = "{\"username\":\"NEWUSERTEST\",\"password\":\"NEW USER TEST PASS\",\"email\":\"NEWUSER@MAIL\"}";
+		RestAssured.given()
+		.contentType(ContentType.JSON)
+		.body(newUserTest)
+		.when()
+			.post("/users/create")
+		.then()
+			.assertThat()
+				.statusCode(200)
+				.body(("username"),equalTo("NEWUSERTEST"))
+				.body(("password"),equalTo("NEW USER TEST PASS"))
+				.body(("email"),equalTo("NEWUSER@MAIL"));
+		
+		Long newUserId = userRepo.findByUsernameAndPassword("NEWUSERTEST", "NEW USER TEST PASS").getID();
+		userRepo.deleteById(newUserId);
+	}
+	
+	@Test
+	public void loginTest() {
+		
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("username", "user1test");
+		data.put("password", "1234");
+		
+		System.out.print(data.toString());
+
+		RestAssured.given()
+		.contentType(ContentType.JSON)
+		.body(data)
+		.when()
+			.post("/login")
+		.then()
+			.assertThat()
+				.statusCode(200)
+				.body("successStatus",equalTo(true))
+				.body(("item.username"),equalTo("user1test"));
+	}
+	
+
+
 	
 	
 	
