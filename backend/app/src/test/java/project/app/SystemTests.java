@@ -254,26 +254,25 @@ public class SystemTests {
 				.body(("item.username"),equalTo("user1test"));
 	}
 	
-//	@Test
-//	public void createAndDeleteCommentTest() {
-//		
-//		String newCommentTest = "{\"id\":\"21\",\"comment\":\"TestMessage\"}";
-//		RestAssured.given()
-//		.contentType(ContentType.JSON)
-//		.body(newCommentTest)
-//		.pathParam("userId", "1")
-//		.pathParam("postId", "1")
-//		.when()
-//			.post("/comment/{userId}/{postId}")
-//		.then()
-//			.assertThat()
-//				.statusCode(200)
-//				.body(("likes"),equalTo(0))
-//				.body(("dislikes"),equalTo(0))
-//				.body(("comment"),equalTo("TestMessage"));
-//		
-//		commentRepo.deleteById(21);
-//	}
+	@Test
+	public void createCommentTest() {
+		
+		String newCommentTest = "{\"comment\":\"TestMessage\"}";
+		RestAssured.given()
+		.contentType(ContentType.JSON)
+		.body(newCommentTest)
+		.pathParam("userId", "1")
+		.pathParam("postId", "1")
+		.when()
+			.post("/comment/{userId}/{postId}")
+		.then()
+			.assertThat()
+				.statusCode(200)
+				.body(("item.likes"),equalTo(0))
+				.body(("item.dislikes"),equalTo(0))
+				.body(("item.comment"),equalTo("TestMessage"));
+		
+	}
 	
 	@Test
 	public void likeCommentTest() {
