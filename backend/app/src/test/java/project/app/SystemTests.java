@@ -174,9 +174,7 @@ public class SystemTests {
 				.body(("username"), not(hasItem("user1test")));
 	}
 	
-	
-	
-	
+
 	
 	//========================================================================
 	//=====							Helper Methods						 =====
@@ -200,4 +198,6 @@ public class SystemTests {
 			.pathParam("friendId", id2)
 		.post("users/{userId}/addFriend/{friendId}");
 	}
+	
+	
 }
