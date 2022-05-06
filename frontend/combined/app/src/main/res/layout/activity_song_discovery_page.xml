@@ -98,7 +98,6 @@
 <!--        android:drawablePadding="20dp"/>-->
 
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/banner"
         android:layout_width="match_parent"
