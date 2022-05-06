@@ -2,30 +2,16 @@ package project.app;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
-import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
-import project.app.model.User;
 import project.app.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -245,6 +231,8 @@ public class SystemTests {
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("username", "user1test");
 		data.put("password", "1234");
+		
+		System.out.print(data.toString());
 
 		RestAssured.given()
 		.contentType(ContentType.JSON)
