@@ -27,12 +27,13 @@ public class ProfileActivity extends Activity implements OnClickListener {
 
     ListView listView;
     String[] songs;
+    public static TextView profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        TextView profile = (TextView) findViewById(R.id.profile);
+        profile = (TextView) findViewById(R.id.profile);
 
         listView = findViewById(R.id.profileSongList);
         runtimePermission();
@@ -110,6 +111,11 @@ public class ProfileActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View view) {
 
+    }
+
+    public static String getUsername()
+    {
+        return (profile.getText().toString());
     }
 }
 
