@@ -82,6 +82,10 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
                 //bring up profile page
                 profilePage();
                 return true;
+            case R.id.activity_settings:
+                //bring up profile page
+                settingsPage();
+                return true;
             case R.id.action_create_new_song:
                 //bring up create new song page
                 createNewSongPage();
@@ -158,6 +162,10 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
     }
     public void openComment() {
         Intent intent = new Intent(this, CommentActivity.class);
+        startActivity(intent);
+    }
+    public void settingsPage() {
+        Intent intent = new Intent(this, settingsActivity.class);
         startActivity(intent);
     }
 

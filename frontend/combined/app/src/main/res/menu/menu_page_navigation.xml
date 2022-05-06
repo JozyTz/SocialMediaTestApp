@@ -2,11 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/activity_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="activity_settings"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_create_new_song"
-        android:title="action_create_new_song"
         android:icon="@drawable/ic_baseline_add_circle_outline_24"
-        app:showAsAction="ifRoom"
-        />
+        android:title="action_create_new_song"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_profile"
