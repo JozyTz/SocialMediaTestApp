@@ -153,7 +153,7 @@ public class SongDiscoveryActivity extends AppCompatActivity implements OnClickL
 
     //creates the new song activity page, but that doesn't exist yet
     public void createNewSongPage() {
-        Intent intent = new Intent(this, songActivity.class);
+        Intent intent = new Intent(this, songUpload.class);
         startActivity(intent);
     }
     public void openComment() {

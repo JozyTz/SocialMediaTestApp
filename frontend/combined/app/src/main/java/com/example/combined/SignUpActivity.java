@@ -1,5 +1,6 @@
 package com.example.combined;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -58,9 +59,9 @@ public class SignUpActivity extends AppCompatActivity
             //Toast.makeText(MainActivity.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
             try {
                 //input your API parameters
-                object.put("username","tglass");
-                object.put("password","glass");
-                object.put("email","tglass@gmail.com");
+                object.put("username",username.getText().toString());
+                object.put("password",password.getText().toString());
+                object.put("email",email.getText().toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -76,6 +77,8 @@ public class SignUpActivity extends AppCompatActivity
                 }
             });
             requestQueue.add(jsonObjectRequest);
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }else
         {
             Toast.makeText(SignUpActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
