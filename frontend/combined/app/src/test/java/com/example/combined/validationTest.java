@@ -12,13 +12,16 @@ public class validationTest
     {
         assertEquals(LoginActivity.getUsername(), ProfileActivity.getUsername());
     }
-
+/*
     @Test
-    public void logout()
+    public <launchActivity> void logout()
     {
-        assertEquals(LoginActivity.getUsername(), ProfileActivity.getUsername());
-    }
+        launchActivity<userSettings>().use
+        {
 
+        }
+    }
+*/
     @Test
     public void followerCount()
     {
